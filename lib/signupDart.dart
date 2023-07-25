@@ -53,6 +53,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
         'email':email,
         'password':pass,
       },);
+      if(response.statusCode==200){
+        print('Account created successfully');
+      }
+      else{
+        print('Failed');
+      }
     }
         catch(e){
       print(e.toString());
