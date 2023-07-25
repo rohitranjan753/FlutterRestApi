@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 class SignUpScreen extends StatefulWidget {
@@ -49,11 +51,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void login(String email, String pass) async {
     try{
       Response response =await post(Uri.parse('https://reqres.in/api/register'),
+      // Response response =await post(Uri.parse('https://reqres.in/api/login'),
       body: {
         'email':email,
         'password':pass,
       },);
       if(response.statusCode==200){
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
         print('Account created successfully');
       }
       else{
