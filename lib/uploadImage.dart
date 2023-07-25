@@ -70,26 +70,34 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
         ),
         body: Column(
           children: [
-            Container(
-              child: image == null
-                  ? Center(
-                      child: Text('Pick Image'),
-                    )
-                  : Container(
-                      child: Center(
-                          child: Image.file(
-                        File(image!.path).absolute,
-                        height: 100,
-                        width: 100,
-                      )),
-                    ),
+            GestureDetector(
+              onTap: (){
+                getImage();
+              },
+              child: Container(
+                child: image == null
+                    ? Center(
+                        child: Text('Pick Image'),
+                      )
+                    : Container(
+                        child: Center(
+                            child: Image.file(
+                          File(image!.path).absolute,
+                          height: 100,
+                          width: 100,
+                        )),
+                      ),
 
+              ),
             ),
             SizedBox(height: 30),
             GestureDetector(
-              onTap: (){},
+              onTap: (){
+                uploadImage();
+              },
               child: Container(
                 height: 50,
+                width: 200,
                 color: Colors.blue,
 
               ),
