@@ -1,6 +1,7 @@
 import 'package:apitutorial/complexScreen.dart';
 import 'package:apitutorial/home_screen.dart';
 import 'package:apitutorial/photoScreen.dart';
+import 'package:apitutorial/signupDart.dart';
 import 'package:apitutorial/userScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ComplexScreen(),
+      home: const SignUpScreen(),
     );
   }
 }
